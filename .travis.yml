@@ -1,17 +1,22 @@
+os: linux
 language: node_js
+
+cache:
+  yarn: true
+
 node_js:
-  - 16
-cache: npm
+  - 18
+
+branches:
+  only:
+    - main
+
 install:
-    - npm install
+    - nvm install 18.15.0
+    - node -v
+    - cd myapple-frontend
+    - yarn workspaces focus --all
+
 script:
   - npm test
   - npm run build
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
-  on:
-    branch: main
