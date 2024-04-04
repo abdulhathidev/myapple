@@ -1,9 +1,17 @@
+dist: focal
+os: linux
 language: node_js
 
-node_js:
-  - 16
+cache:
+  npm: true
+  yarn: true
 
-cache: npm
+node_js:
+  - 18
+
+branches:
+  only:
+    - main
 
 install:
   - cd myapple-frontend
