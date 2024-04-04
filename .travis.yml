@@ -12,11 +12,21 @@ branches:
   only:
     - main
 
+env:
+  global:
+    - NODE_ENV=test
+    - DEBIAN_FRONTEND=noninteractive
+    - CI_NODE_TOTAL=2
+    - DOMAIN=localhost
+    - MYAPPLE_BASE_URI=http://localhost:8080
+    - MYAPPLE_API_URI=http://localhost:3000
+
 install:
   - nvm install 18.15.0
   - node -v
+  - |-
   - cd myapple-frontend
-  - yarn workspaces focus --all
+  - yarn install
 
 script:
   - yarn test
