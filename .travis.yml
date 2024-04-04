@@ -15,15 +15,8 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
+  skip-cleanup: true
+  github0token: $GITHUB_TOKEN
+  local_dir: myapple-frontend/build
   on:
     branch: main
-
-notifications:
-  email:
-    if: type = cron
-    recipients:
-      - abdulhathi@gmail.com
-    on_success: always
