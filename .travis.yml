@@ -6,8 +6,8 @@ node_js:
 cache: npm
 
 install:
-  - npm install
   - cd myapple-frontend
+  - npm install
 
 script:
   - npm test
