@@ -3,7 +3,6 @@ os: linux
 language: node_js
 
 cache:
-  npm: true
   yarn: true
 
 node_js:
@@ -14,12 +13,14 @@ branches:
     - main
 
 install:
+  - nvm install 18.15.0
+  - node -v
   - cd myapple-frontend
-  - npm install
+  - yarn install
 
 script:
-  - npm test
-  - npm run build
+  - yarn test
+  - yarn run build
 
 deploy:
   provider: pages
