@@ -17,6 +17,10 @@ install:
   - cd myapple-frontend
   - yarn workspaces focus --all
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install shared-mime-info
+
 script:
   - yarn test
   - npm run build
