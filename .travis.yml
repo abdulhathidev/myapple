@@ -5,7 +5,7 @@ cache:
   yarn: true
 
 node_js:
-  - 18
+  - 17
 
 branches:
   only:
