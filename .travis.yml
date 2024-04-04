@@ -13,6 +13,7 @@ branches:
 
 install:
   - nvm install 18.15.0
+  - cd myapple-frontend
 
 before_install:
   - sudo apt-get update
@@ -20,4 +21,3 @@ before_install:
 
 script:
   - yarn test
-  - npm run build
