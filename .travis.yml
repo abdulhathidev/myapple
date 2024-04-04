@@ -13,8 +13,6 @@ branches:
 
 install:
   - nvm install 18.15.0
-  - cd myapple-frontend
-  - yarn workspaces focus --all
 
 before_install:
   - sudo apt-get update
