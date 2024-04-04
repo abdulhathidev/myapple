@@ -16,7 +16,7 @@ install:
   - nvm install 18.15.0
   - node -v
   - cd myapple-frontend
-  - yarn install
+  - yarn workspaces focus --all
 
 script:
   - yarn test
