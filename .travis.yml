@@ -28,13 +28,13 @@ install:
   - nvm install 18.15.0
   - node -v
   - |-
-  - cd myapple-backend
+  - cd myapple-backend1
   - bundle install
   - cd ../myapple-frontend
   - yarn install
 
 script:
-  - cd ../myapple-backend
+  - cd ../myapple-backend1
   - cd ../myapple-frontend
   - yarn test
   - yarn run build
