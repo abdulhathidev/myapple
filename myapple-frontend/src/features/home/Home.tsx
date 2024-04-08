@@ -13,7 +13,7 @@ const Home = () => {
     getGroups()
   }, [])
   const getGroups = () => {
-    fetch('http://localhost:3000/groups')
+    fetch('http://localhost:3000/api/v1/groups')
       .then((res) => res.json())
       .then((groups: Group[]) => setGroups(groups))
   }

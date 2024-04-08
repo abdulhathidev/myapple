@@ -1204,3 +1204,15 @@ Processing by Api::V1::GroupsController#index as HTML
 Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 3.8ms | Allocations: 930)
 
 
+Started GET "/groups" for ::1 at 2024-04-08 00:43:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/groups" for ::1 at 2024-04-08 00:43:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
