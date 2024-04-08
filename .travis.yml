@@ -1,6 +1,6 @@
 dist: focal
 os: linux
-language: node_js, ruby
+language: ruby
 
 rvm:
   - 3.2.3
