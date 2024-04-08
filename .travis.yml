@@ -29,6 +29,7 @@ install:
   - nvm install 18.15.0
   - node -v
   - |-
+  - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
   - cd myapple-backend1
   - bundle install
   - cd ../myapple-frontend
