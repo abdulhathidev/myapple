@@ -35,9 +35,28 @@ install:
   - cd ../myapple-frontend
   - yarn install
 
-script:
-  - yarn test
-  - yarn run build
+jobs:
+  include:
+    - stage: test
+      if: type IN (pull_request, cron, push)
+      env:
+        - COVERAGE=true
+        - COVERAGE_THRESHOLD=100
+        - CI_NODE_INDEX=0
+      script:
+        - cd ../myapple-backend1
+        - bundle exec bundle-audit check --update
+        - bundle exec rake ci
+        - cd ..
+        - cd myapple-frontend
+        - yarn test
+        - yarn lint
+        - yarn ci-audit
+        - yarn tsc
+    - name: Cypress
+      script:
+        - cd ../myapple-backend1
+        - bundle exec rake cypress:run
 
 deploy:
   provider: pages
