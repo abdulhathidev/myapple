@@ -1,0 +1,1206 @@
+Started GET "/" for ::1 at 2024-04-04 02:00:44 -0700
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 376)
+Completed 200 OK in 74ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 8634)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-04-04 09:05:23.061080', '2024-04-04 09:05:23.061084') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGroups (20240404090331)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "groups" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240404090331') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Create (0.7ms)[0m  [1m[32mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Group 1"], ["created_at", "2024-04-04 09:27:44.335120"], ["updated_at", "2024-04-04 09:27:44.335120"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Create (0.6ms)[0m  [1m[32mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Group 2"], ["created_at", "2024-04-04 09:28:09.053536"], ["updated_at", "2024-04-04 09:28:09.053536"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2024-04-04 02:28:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 261)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 860)
+
+
+Started GET "/groups.json" for ::1 at 2024-04-04 02:29:05 -0700
+Processing by GroupsController#index as JSON
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 87ms (Views: 38.1ms | ActiveRecord: 1.8ms | Allocations: 16988)
+
+
+Started GET "/groups.json" for ::1 at 2024-04-04 02:29:43 -0700
+Processing by GroupsController#index as JSON
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 671)
+
+
+Started GET "/favicon.ico" for ::1 at 2024-04-04 02:29:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/groups.json" for ::1 at 2024-04-04 02:29:44 -0700
+Processing by GroupsController#index as JSON
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 669)
+
+
+Started GET "/groups.json" for 127.0.0.1 at 2024-04-04 02:30:25 -0700
+Processing by GroupsController#index as JSON
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 657)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-04-04 02:30:26 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/groups.json" for 127.0.0.1 at 2024-04-04 02:30:51 -0700
+Processing by GroupsController#index as JSON
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 661)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-04-04 02:30:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2024-04-06 21:36:16 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.1ms | Allocations: 376)
+Completed 200 OK in 251ms (Views: 63.8ms | ActiveRecord: 0.0ms | Allocations: 4736)
+
+
+Started GET "/groups.json" for ::1 at 2024-04-06 21:36:22 -0700
+Processing by GroupsController#index as JSON
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 232ms (Views: 49.6ms | ActiveRecord: 2.5ms | Allocations: 15341)
+
+
+Started GET "/favicon.ico" for ::1 at 2024-04-06 21:36:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/groups.json" for 127.0.0.1 at 2024-04-06 21:36:42 -0700
+Processing by GroupsController#index as JSON
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 676)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-04-06 21:36:43 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2024-04-06 22:42:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 378)
+Completed 200 OK in 29ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4778)
+
+
+Started GET "/" for ::1 at 2024-04-06 22:42:31 -0700
+Processing by Rails::WelcomeController#index as */*
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 200)
+
+
+Started GET "/" for ::1 at 2024-04-06 22:42:31 -0700
+Processing by Rails::WelcomeController#index as */*
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 201)
+
+
+Started GET "/" for ::1 at 2024-04-06 22:42:31 -0700
+Processing by Rails::WelcomeController#index as */*
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 199)
+
+
+Started GET "/gropu" for ::1 at 2024-04-06 22:42:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/gropu"):
+  
+Started GET "/gropu" for ::1 at 2024-04-06 22:42:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/gropu"):
+  
+Started GET "/gro" for ::1 at 2024-04-06 22:42:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/gro"):
+  
+Started GET "/gro" for ::1 at 2024-04-06 22:42:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/gro"):
+  
+Started GET "/groups" for ::1 at 2024-04-06 22:42:35 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 65ms (Views: 36.3ms | ActiveRecord: 2.7ms | Allocations: 15315)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:35 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 668)
+
+
+Started GET "/groups" for 127.0.0.1 at 2024-04-06 22:42:39 -0700
+Processing by GroupsController#index as HTML
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 668)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-04-06 22:42:39 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/groups" for ::1 at 2024-04-06 22:42:46 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 676)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:46 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:49 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 678)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:49 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:49 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:49 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:50 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 678)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:50 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:50 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:51 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:53 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:53 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:54 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:42:54 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:43:04 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:43:05 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:45:02 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:45:02 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:45:12 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:45:12 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:45:15 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:45:15 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:47:50 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:48:04 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:48:04 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:48:06 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:48:06 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:48:38 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:48:43 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 22:48:43 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:08:28 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 99ms (Views: 48.3ms | ActiveRecord: 3.1ms | Allocations: 17765)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:08:29 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 669)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:08:46 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 678)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:08:49 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 678)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:08:49 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:08:58 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 678)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:09:14 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 678)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:09:17 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:09:17 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:09:36 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:10:19 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:10:21 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:10:27 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:10:27 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:12:31 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:12:56 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:00 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:00 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:03 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:07 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:14 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:18 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:22 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:31 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:32 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:42 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:44 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:46 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:48 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:49 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:50 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:51 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:13:54 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:08 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:14 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:15 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:16 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:23 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:47 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:50 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:50 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:14:59 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:15:00 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:15:00 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:21:36 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (1.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 2.5ms | Allocations: 935)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:21:48 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:22:11 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:22:15 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:22:15 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:22:21 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:22:29 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:22:34 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:03 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:09 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:09 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:11 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:11 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:21 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:23 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:24 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:29 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:31 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:34 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:35 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:23:43 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:24:00 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:24:01 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:24:03 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:24:03 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:24:25 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:24:25 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:05 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:07 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:08 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:10 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:10 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:11 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:20 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:25 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:33 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:35 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:35 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:51 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:25:51 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:26:22 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:26:24 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:26:54 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:26:55 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:26:55 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:01 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:04 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:06 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:11 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:11 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:27 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:27 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:33 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:39 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:52 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:52 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:27:57 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:28:03 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:28:04 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:28:05 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:28:07 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:28:07 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:29:34 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/groups" for ::1 at 2024-04-06 23:29:34 -0700
+Processing by GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/api/v1/groups" for ::1 at 2024-04-07 01:14:01 -0700
+  
+SyntaxError (C:/Users/abdul/Development/TravisCI/myapple/myapple-backend/config/routes.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+  namespace: api do
+           ^
+):
+  
+config/routes.rb:2: syntax error, unexpected ':', expecting `end' or dummy end
+Started GET "/api/v1/groups" for ::1 at 2024-04-07 01:15:29 -0700
+Processing by Api::V1::GroupsController#index as HTML
+  [1m[36mGroup Load (2.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 3.7ms | ActiveRecord: 3.6ms | Allocations: 3565)
+
+
+Started GET "/groups" for 127.0.0.1 at 2024-04-07 01:15:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-04-07 01:15:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/groups" for 127.0.0.1 at 2024-04-07 01:15:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/api/v1/groups" for 127.0.0.1 at 2024-04-07 01:15:42 -0700
+Processing by Api::V1::GroupsController#index as HTML
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 663)
+
+
+Started GET "/api/v1/groups" for ::1 at 2024-04-07 22:23:32 -0700
+Processing by Api::V1::GroupsController#index as HTML
+  [1m[36mGroup Load (2.9ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 4.0ms | Allocations: 930)
+
+
+Started GET "/groups" for ::1 at 2024-04-07 23:09:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/groups" for ::1 at 2024-04-07 23:09:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/api/v1/groups" for ::1 at 2024-04-07 23:09:36 -0700
+Processing by Api::V1::GroupsController#index as HTML
+  [1m[36mGroup Load (2.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 3.8ms | Allocations: 930)
+
+
