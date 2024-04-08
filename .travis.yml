@@ -28,7 +28,9 @@ install:
   - nvm install 18.15.0
   - node -v
   - |-
-  - cd myapple-frontend
+  - cd myapple-backend
+  - bundle install
+  - cd ../myapple-frontend
   - yarn install
 
 script:
