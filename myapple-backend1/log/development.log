@@ -1216,3 +1216,78 @@ ActionController::RoutingError (No route matches [GET] "/groups"):
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/groups" for ::1 at 2024-04-08 00:44:52 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::GroupsController#index as HTML
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 226ms (Views: 42.6ms | ActiveRecord: 3.8ms | Allocations: 17852)
+
+
+Started GET "/groups" for ::1 at 2024-04-08 00:44:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/groups" for ::1 at 2024-04-08 00:44:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/groups" for ::1 at 2024-04-08 00:44:57 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/groups" for ::1 at 2024-04-08 00:44:57 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/groups"):
+  
+Started GET "/apigroups" for ::1 at 2024-04-08 00:45:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/apigroups"):
+  
+Started GET "/apigroups" for ::1 at 2024-04-08 00:45:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/apigroups"):
+  
+Started GET "/api/v1groups" for ::1 at 2024-04-08 00:45:18 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1groups"):
+  
+Started GET "/api/v1groups" for ::1 at 2024-04-08 00:45:18 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1groups"):
+  
+Started GET "/api/v1/groups" for ::1 at 2024-04-08 00:45:19 -0700
+Processing by Api::V1::GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 671)
+
+
+Started GET "/api/v1/groups" for ::1 at 2024-04-08 00:45:19 -0700
+Processing by Api::V1::GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+
+Started GET "/api/v1/groups" for ::1 at 2024-04-08 00:45:36 -0700
+Processing by Api::V1::GroupsController#index as HTML
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 673)
+
+
+Started GET "/api/v1/groups" for ::1 at 2024-04-08 00:46:24 -0700
+Processing by Api::V1::GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 678)
+
+
+Started GET "/api/v1/groups" for ::1 at 2024-04-08 00:46:24 -0700
+Processing by Api::V1::GroupsController#index as */*
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/controllers/api/v1/groups_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 666)
+
+

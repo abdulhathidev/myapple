@@ -34,8 +34,6 @@ install:
   - yarn install
 
 script:
-  - cd ../myapple-backend1
-  - cd ../myapple-frontend
   - yarn test
   - yarn run build
 
