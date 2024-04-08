@@ -1,6 +1,9 @@
 dist: focal
 os: linux
-language: node_js
+language: node_js, ruby
+
+rvm:
+  - 3.2.3
 
 cache:
   yarn: true
