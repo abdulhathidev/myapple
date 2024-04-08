@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+export const BACKEND_API_URI = process.env.REACT_APP_MYAPPLE_API_URI
+
 interface Group {
   id: number
   name: string
@@ -8,12 +10,13 @@ interface Group {
 }
 
 const Home = () => {
+  console.log(process.env.REACT_APP_MYAPPLE_API_URI)
   const [groups, setGroups] = useState<Group[]>([])
   useEffect(() => {
     getGroups()
   }, [])
   const getGroups = () => {
-    fetch('http://localhost:3000/api/v1/groups')
+    fetch(`${BACKEND_API_URI}/api/v1/groups`)
       .then((res) => res.json())
       .then((groups: Group[]) => setGroups(groups))
   }
