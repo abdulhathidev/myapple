@@ -39,7 +39,21 @@ gem 'rack-cors'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # Brakeman is a free vulnerability scanner specifically designed for Ruby on Rails applications
+  gem 'brakeman'
+  # Cypress on Rails gem, which provides some good integrations between Cypress and Ruby on Rails.
+  gem 'cypress-on-rails', '~> 1.0'
   gem "debug", platforms: %i[ mri windows ]
+  gem 'factory_bot', '~> 6.2'
+  gem 'kender'
+  
+  # Debugging
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', require: false
+  gem 'rubocop-git'
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
