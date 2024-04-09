@@ -26,7 +26,7 @@ env:
     - REACT_APP_MYAPPLE_API_URI=http://localhost:3000
 
 install:
-  - nvm install 18.15.0
+  - nvm install 18.18.0
   - node -v
   - |-
   - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
