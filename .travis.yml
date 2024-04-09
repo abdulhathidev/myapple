@@ -53,6 +53,7 @@ jobs:
         - yarn test:unit
         - yarn lint
         - yarn tsc
+        - yarn run build
     - name: Cypress
       script:
         - cd ../myapple-backend1
