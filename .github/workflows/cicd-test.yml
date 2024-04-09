@@ -1,0 +1,23 @@
+name: '[CICD Test]'
+
+on:
+  workflow_call:
+    inputs:
+      runtime_env:
+        description: 'runtime environment'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: [self-hosted, ubuntu-latest]
+    steps:
+      - name: test1
+        run: |
+          echo "!!! Put test code here  !!!"
+      - name: test2
+        run: |
+          echo "!!! Put test code here  !!!"
