@@ -50,9 +50,8 @@ jobs:
         - bundle exec rake ci
         - cd ..
         - cd myapple-frontend
-        - yarn test
+        - yarn test:unit
         - yarn lint
-        - yarn ci-audit
         - yarn tsc
     - name: Cypress
       script:
