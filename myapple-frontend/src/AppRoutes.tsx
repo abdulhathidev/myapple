@@ -1,6 +1,6 @@
-import React from 'react'
-import { HashRouter, Routes, Route } from 'react-router-dom'
-import Home from './features/home/Home'
+import React from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Home from "./features/home/Home";
 
 const AppRoutes = () => {
   return (
@@ -11,7 +11,7 @@ const AppRoutes = () => {
         </Routes>
       </HashRouter>
     </div>
-  )
-}
+  );
+};
 
-export default AppRoutes
+export default AppRoutes;
