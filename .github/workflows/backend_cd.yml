@@ -1,0 +1,20 @@
+name: Distribute myapple-backend api to Heroku
+
+# Concern 1
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'myapple-backend1/**'
+
+  jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+# Concern 2
+      - name: Deploy API
+        uses: 

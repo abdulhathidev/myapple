@@ -1,0 +1,12 @@
+name: Validate project
+
+on:
+  push:
+    branches-ignore:
+      - main
+  
+  jobs:
+    ci_validation:
+      runs-on: [self-hosted, ubuntu-latest]
+      services:
+        mysql
