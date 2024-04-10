@@ -10,11 +10,16 @@ on:
 
   jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ubuntu-latest]
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
 
 # Concern 2
-      - name: Deploy API
-        uses: 
+    - name: Deploy API
+      uses: abdulhathi/heroku-deploy@v3.12.14
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: ${{secrets.HEROKU_API_APP_NAME}}
+        heroku_email: ${{secrets.HEROKU_EMAIL}}
+        appdir: "myapple-backend1"
