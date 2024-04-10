@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/myapple/static/css/main.c74fd6d1.css",
+    "main.js": "/myapple/static/js/main.a5852c2e.js",
+    "static/js/845.0ba3d449.chunk.js": "/myapple/static/js/845.0ba3d449.chunk.js",
+    "index.html": "/myapple/index.html",
+    "main.c74fd6d1.css.map": "/myapple/static/css/main.c74fd6d1.css.map",
+    "main.a5852c2e.js.map": "/myapple/static/js/main.a5852c2e.js.map",
+    "845.0ba3d449.chunk.js.map": "/myapple/static/js/845.0ba3d449.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c74fd6d1.css",
+    "static/js/main.a5852c2e.js"
+  ]
+}
