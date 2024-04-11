@@ -24,8 +24,8 @@ jobs:
           bundler-cache: true
       
       # Add or replace test runners here
-      - name: Run tests
-        run: bin/rake
+      - name: rspec
+        run: COVERAGE=true COVERAGE_THRESHOLD=50.0 bundle exec rspec
 
   lint:
     runs-on: ubuntu-latest
