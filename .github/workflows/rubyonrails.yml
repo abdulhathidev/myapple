@@ -13,15 +13,22 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       # Add or replace dependency steps here
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1 # v1.146.0
         with:
+          ruby-version: 3.2.3
           working-directory: myapple-backend
           bundler-cache: true
+
+      - name: API Tests
+        working-directory: myapple-backend
+        run: bundle exec rspec spec
 
   lint:
     runs-on: ubuntu-latest
@@ -31,6 +38,7 @@ jobs:
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1 # v1.146.0
         with:
+          ruby-version: 3.2.3
           working-directory: myapple-backend1
           bundler-cache: true
       # Add or replace any other lints here
