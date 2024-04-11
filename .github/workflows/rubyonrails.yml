@@ -36,10 +36,13 @@ jobs:
       # Add or replace any other lints here
 
       - name: Brakeman
+        working-directory: myapple-backend
         run: bundle exec brakeman --quiet --exit-on-warn
 
       - name: Security audit dependencies
+        working-directory: myapple-backend
         run: bundle exec bundle-audit check --update
 
       - name: Rubocop
+        working-directory: myapple-backend
         run: bundle exec rubocop
