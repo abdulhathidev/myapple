@@ -98,3 +98,7 @@ jobs:
       - name: Yarn lint
         working-directory: myapple-frontend
         run: yarn lint
+
+      - name: Yarn tsc
+        working-directory: myapple-frontend
+        run: yarn tsc
