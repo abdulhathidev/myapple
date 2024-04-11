@@ -16,6 +16,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: No SSH
+        run: |
+          git config --global url."https://github".insteadOf ssh://git@github
+          git config --global url."https://github.com/".insteadOf git@github.com:
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -60,3 +65,6 @@ jobs:
       - name: rake_ci
         working-directory: myapple-backend
         run: bundle exec rake ci
+    
+    # npmTest:
+    #   runs-on: ubuntu-latest
