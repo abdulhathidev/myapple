@@ -13,6 +13,16 @@
 # it.
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'simplecov'
+
+# Only load SimpleCov if the environment variable COVERAGE is set
+# This allows you to toggle coverage on and off as needed
+if ENV['COVERAGE'].to_s == 'true'
+  SimpleCov.start 'rails' do
+    minimum_coverage ENV['COVERAGE_THRESHOLD'].to_f
+    add_filter ['app/channels', 'app/helpers', 'app/mailers', 'app/jobs']
+  end
+end
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
