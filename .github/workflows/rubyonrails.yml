@@ -85,5 +85,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          working-directory: myapple-frontend
+          node-version: 18.15.1
+
+      - name: Yarn install
+        working-directory: myapple-frontend
+        run: yarn install
+
+      - name: Yarn test
+        working-directory: myapple-frontend
+        run: yarn test:unit
