@@ -94,3 +94,7 @@ jobs:
       - name: Yarn test
         working-directory: myapple-frontend
         run: yarn test:unit
+
+      - name: Yarn lint
+        working-directory: myapple-frontend
+        run: yarn lint
