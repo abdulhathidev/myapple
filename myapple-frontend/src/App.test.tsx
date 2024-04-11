@@ -1,5 +1,3 @@
-describe('App test', () => {
-  test('renders My apple - front end', () => {
-    expect(2).toEqual(2)
-  })
+test('renders learn react link', () => {
+  expect(2).toEqual(2)
 })
