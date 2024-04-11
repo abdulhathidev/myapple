@@ -35,11 +35,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1 # v1.146.0
         with:
           ruby-version: 3.2.3
-          working-directory: myapple-backend1
+          working-directory: myapple-backend
           bundler-cache: true
       # Add or replace any other lints here
 
