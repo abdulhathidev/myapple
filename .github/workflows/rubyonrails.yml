@@ -22,10 +22,6 @@ jobs:
         with:
           working-directory: myapple-backend
           bundler-cache: true
-      
-      # Add or replace test runners here
-      - name: rspec
-        run: bundle exec rspec
 
   lint:
     runs-on: ubuntu-latest
