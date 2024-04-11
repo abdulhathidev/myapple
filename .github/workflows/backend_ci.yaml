@@ -1,0 +1,53 @@
+name: Setup and Validate API
+
+# Concern 1
+on:
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - 'myapple-backend1/**'
+
+jobs:
+  api_validation:
+    runs-on: [self-hosted, ubuntu-latest]
+    env:
+      RAILS_ENV: test
+
+    services:
+      postgres:
+        image: postgres:alpine
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+  # Concern 2
+      - name: API Setup
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.3
+          working-directory: myapple-backend1
+          bundler-cache: true
+          cache-version: 1
+          
+  # Concern 3
+      - name: Prepare Database
+        working-directory: myapple-backend1
+        run: ./bin/heroku_deploy.sh
+        
+  # Concern 4
+      - name: API Tests
+        working-directory: api
+        run: bundle exec rspec spec
+          
+  # Concern 6
+      - name: API Lint
+        working-directory: api
+        run: bundle exec rubocop
