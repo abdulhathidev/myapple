@@ -121,4 +121,4 @@ jobs:
 
       - name: Cypress Run
         working-directory: myapple-backend
-        run: cypress-io/github-action@v2
+        run: yarn cypress run
