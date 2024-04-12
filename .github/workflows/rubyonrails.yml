@@ -122,6 +122,10 @@ jobs:
         with:
           node-version: 18
 
+      - name: Yarn install
+        working-directory: myapple-backend
+        run: yarn install
+
       - name: Cypress Run
         working-directory: myapple-backend
         run: yarn cypress run
