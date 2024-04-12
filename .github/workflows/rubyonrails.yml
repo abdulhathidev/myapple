@@ -102,5 +102,22 @@ jobs:
       - name: Yarn tsc
         working-directory: myapple-frontend
         run: yarn tsc
-  
-  
+
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: No SSH
+        run: |
+          git config --global url."https://github".insteadOf ssh://git@github
+          git config --global url."https://github.com/".insteadOf git@github.com:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Cypress Run
+        run: cypress-io/github-action@v2
