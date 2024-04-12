@@ -143,4 +143,4 @@ jobs:
 
       - name: Cypress Run
         working-directory: myapple-backend
-        run: yarn start-server-and-test 'bundle exec rails s' http://0.0.0.0:3000 'yarn workspace myapple-frontend start' http://0.0.0.0:8080 'yarn cypress run'
+        run: yarn start-server-and-test 'bundle exec rails s' http://0.0.0.0:3000 'yarn workspace myapple-frontend start' http://0.0.0.0:8081 'yarn cypress run'
