@@ -113,7 +113,7 @@ jobs:
         run: |
           git config --global url."https://github".insteadOf ssh://git@github
           git config --global url."https://github.com/".insteadOf git@github.com:
-          
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -123,7 +123,7 @@ jobs:
           ruby-version: 3.2.3
           working-directory: myapple-backend
           bundler-cache: true
-      
+
       - name: bundle install
         working-directory: myapple-backend
         run: bundle install
@@ -143,4 +143,4 @@ jobs:
 
       - name: Cypress Run
         working-directory: myapple-backend
-        run: yarn start-server-and-test 'bundle exec rails s' http://0.0.0.0:3000 'yarn workspace myapple-frontend start' http://0.0.0.0:8081 'yarn cypress run'
+        run: yarn start-server-and-test 'bundle exec rails s' http://0.0.0.0:3000 'yarn cypress run'
