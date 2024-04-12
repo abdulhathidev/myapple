@@ -120,4 +120,5 @@ jobs:
           node-version: 18
 
       - name: Cypress Run
+        working-directory: myapple-backend
         run: cypress-io/github-action@v2
