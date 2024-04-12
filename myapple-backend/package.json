@@ -1,5 +1,16 @@
 {
+  "name": "myapple-backend",
+  "private": true,
   "devDependencies": {
-    "cypress": "^13.7.2"
-  }
+    "cypress": "^13.7.2",
+    "start-server-and-test": "^2.0.3"
+  },
+  "scripts": {
+    "start": "yarn workspace myapple-frontend start",
+    "rails_start": "bundle exec rails s",
+    "run_tests": "yarn start-server-and-test rails_start http://0.0.0.0:3000/api/v1/groups yarn cypress run"
+  },
+  "workspaces": [
+    "../myapple-frontend"
+  ]
 }
