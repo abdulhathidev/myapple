@@ -146,4 +146,4 @@ jobs:
         with:
           working-directory: myapple-backend
           start: bundle exec rails s -b localhost -p 3001, yarn workspace myapple-frontend start
-          wait-on: http://localhost:3000, http://localhost:8081
+          wait-on: http://localhost:3001, http://localhost:8081
