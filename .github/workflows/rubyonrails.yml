@@ -124,7 +124,7 @@ jobs:
           working-directory: myapple-backend
           bundler-cache: true
 
-      - name: bundle install
+      - name: bundle install backend
         working-directory: myapple-backend
         run: bundle install
 
@@ -133,7 +133,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: Yarn install
+      - name: Yarn install backend
         working-directory: myapple-backend
         run: yarn install
 
@@ -142,5 +142,9 @@ jobs:
         run: yarn install
 
       - name: Cypress Run
-        working-directory: myapple-backend
-        run: yarn start-server-and-test 'bundle exec rails s' http://0.0.0.0:3000 'yarn cypress run'
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: myapple-backend
+          start: |
+            bundle exec rails s
+            yarn start

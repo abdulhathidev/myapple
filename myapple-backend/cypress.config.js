@@ -5,7 +5,7 @@ module.exports = defineConfig({
   videosFolder: 'tmp/cypress_videos',
   trashAssetsBeforeRuns: false,
   e2e: {
-    specPattern: 'cypress/**/*.feature',
+    specPattern: 'cypress/**/*.{feature,cy.js,js}',
     baseUrl: 'http://localhost:3000',
     myPaymentsUrl: 'http://localhost:8080',
     setupNodeEvents(on, config) {

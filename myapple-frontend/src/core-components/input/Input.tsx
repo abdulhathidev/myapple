@@ -1,10 +1,12 @@
 import React, { PropsWithChildren } from 'react'
 
 export const InputType = {
-  text: { className: 'px-3 py-1 rounded border-2 border-grey-300' },
-  password: { className: 'px-3 py-1 rounded border-2 border-grey-300' },
+  text: { className: 'px-3 py-1 rounded border-2 border-grey-300 w-80' },
+  password: { className: 'px-3 py-1 rounded border-2 border-grey-300 w-80' },
   dropdown: { className: 'rounded border-2 border-grey-500 p-1 mw-10' },
-  date: { className: 'px-3 py-1 rounded border-2 border-grey-300' },
+  date: { className: 'px-3 py-1 rounded border-2 border-grey-300  w-80' },
+  email: { className: 'px-3 py-1 rounded border-2 border-grey-300 w-80' },
+  radio: { className: 'px-3 py-1 rounded border-2 border-grey-300' },
 }
 
 export type InputStyle = keyof typeof InputType
@@ -26,7 +28,9 @@ const Input = ({
   required = false,
   minLength,
   onChange: onValueChange,
-  value
+  value,
+  name,
+  checked,
 }: InputProps) => {
   let inputComponent
   if (type === 'dropdown') {
@@ -53,6 +57,8 @@ const Input = ({
         minLength={minLength}
         onChange={onValueChange}
         value={value}
+        name={name}
+        checked={checked}
       ></input>
     )
   }
