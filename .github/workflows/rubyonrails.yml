@@ -140,6 +140,7 @@ jobs:
       - name: Cypress Run
         uses: cypress-io/github-action@v6
         with:
-          start: yarn workspace myapple-frontend start
           working-directory: myapple-backend
-          wait-on: http://localhost:8081
+          start: bundle exec rails s -b localhost -p 3001, yarn workspace myapple-frontend start
+          install: false
+          wait-on: http://localhost:3001, http://[::1]:8081
