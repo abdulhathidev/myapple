@@ -147,4 +147,4 @@ jobs:
           working-directory: myapple-backend
           start: bundle exec rails s -b localhost -p 3001, yarn workspace myapple-frontend start
           install: false
-          wait-on: 'npx wait-on --timeout 60000 http://localhost:4200'
+          wait-on: 'npx wait-on --timeout 60000 http://localhost:8081'
