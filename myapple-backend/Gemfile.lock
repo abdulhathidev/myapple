@@ -301,6 +301,7 @@ GEM
       websocket (~> 1.0)
     shoulda-matchers (6.2.0)
       activesupport (>= 5.2.0)
+    shutup (0.1.2)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -385,6 +386,7 @@ DEPENDENCIES
   rubocop-rails
   selenium-webdriver
   shoulda-matchers
+  shutup
   simplecov
   solargraph
   spring
