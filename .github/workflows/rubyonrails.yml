@@ -146,5 +146,5 @@ jobs:
         with:
           working-directory: myapple-backend
           start: |
-            bundle exec rails s
+            yarn rails_start
             yarn start
