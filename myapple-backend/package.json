@@ -13,5 +13,8 @@
   },
   "workspaces": [
     "../myapple-frontend"
-  ]
+  ],
+  "dependencies": {
+    "wait-on": "^7.2.0"
+  }
 }
