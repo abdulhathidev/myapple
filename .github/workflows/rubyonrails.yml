@@ -122,7 +122,7 @@ jobs:
         with:
           ruby-version: 3.2.3
           working-directory: myapple-backend
-          bundler-cache: true
+          bundler-cache: false
 
       - name: bundle install backend
         working-directory: myapple-backend
