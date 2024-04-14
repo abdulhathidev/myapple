@@ -11,6 +11,6 @@ namespace :cypress do
   end
 
   def command(action)
-    "DEBUG=start-server-and-test WAIT_ON_TIMEOUT=60000 yarn start-server-and-test 'yarn start' http://0.0.0.0:4200 'yarn #{action}_tests'"
+    "DEBUG=start-server-and-test WAIT_ON_TIMEOUT=60000 yarn start-server-and-test 'yarn start' http://0.0.0.0:3000 'yarn #{action}_tests'"
   end
 end

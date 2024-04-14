@@ -146,6 +146,6 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           working-directory: myapple-backend
-          start: bundle exec rails s -b localhost -p 3001, yarn workspace myapple-frontend start -p 4200
+          start: bundle exec rails s -b localhost -p 3001, yarn workspace myapple-frontend start
           install: false
-          wait-on: http://localhost:4200/myapple
+          wait-on: http://localhost:3000/myapple
