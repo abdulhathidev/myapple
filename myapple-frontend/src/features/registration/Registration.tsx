@@ -12,7 +12,7 @@ const Registration = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             src={Apple}
-            className="border-2 border-red-600 p-1 rounded-full mx-auto h-16 w-auto"
+            className="border-2 border-red-600 p-1 rounded-full mx-auto h-16 w-auto" alt="signup logo"
           ></img>
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign up to your account
@@ -33,7 +33,7 @@ const Registration = () => {
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
                 <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <a href="http://google.com" className="font-semibold text-indigo-600 hover:text-indigo-500">
                     Forgot password?
                   </a>
                 </div>

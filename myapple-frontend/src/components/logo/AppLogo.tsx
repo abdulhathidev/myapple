@@ -6,10 +6,9 @@ interface AppLogoProps extends PropsWithChildren {
 }
 
 const AppLogo = ({ size = 12 }: AppLogoProps) => {
-  const className = `bg-white rounded-full mx-auto h-${size} w-auto`
   return (
     <div>
-      <img src={Apple} className="bg-white rounded-full mx-auto h-10 w-auto"></img>
+      <img src={Apple} className="bg-white rounded-full mx-auto h-10 w-auto" alt="logo"></img>
     </div>
   )
 }

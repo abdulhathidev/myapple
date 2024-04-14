@@ -128,11 +128,6 @@ jobs:
         working-directory: myapple-backend
         run: bundle install
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
       - name: Install latest Chrome
         run: |
           sudo apt update
