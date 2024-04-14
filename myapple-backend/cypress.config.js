@@ -7,7 +7,7 @@ module.exports = defineConfig({
   e2e: {
     specPattern: 'cypress/**/*.{feature,cy.js,js}',
     baseUrl: 'http://localhost:3001',
-    myPaymentsUrl: 'http://localhost:8081',
+    myPaymentsUrl: 'http://localhost:4200',
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
