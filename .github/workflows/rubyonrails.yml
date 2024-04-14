@@ -139,9 +139,6 @@ jobs:
           sudo apt --only-upgrade install google-chrome-stable
           google-chrome --version
 
-      - name: Install dependencies
-        run: yarn ci
-
       - name: Yarn install backend
         working-directory: myapple-backend
         run: yarn install
